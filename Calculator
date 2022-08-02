@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите первое число");
+        int a = scanner.nextInt();
+        System.out.println(a + "первое число");
+        System.out.println("введите второе число");
+        int b = scanner.nextInt();
+        int c = a + b;
+        System.out.println("Ответ: " + c);
+
+
+        public class Calculator {
+            public static void main(String[] args) {
+                double num1;
+                double num2;
+                double ans;
+                char op;
+                Scanner reader = new Scanner(System.in);
+                System.out.print("Enter two numbers: ");
+                num1 = reader.nextDouble();
+                num2 = reader.nextDouble();
+                System.out.print("\nEnter an operator (+, -, *, /): ");
+                op = reader.next().charAt(0);
+                switch (op) {
+                    case '+':
+                        ans = num1 + num2;
+                        break;
+                    case '-':
+                        ans = num1 - num2;
+                        break;
+                    case '*':
+                        ans = num1 * num2;
+                        break;
+                    case '/':
+                        ans = num1 / num2;
+                        break;
+                    default:
+                        System.out.printf("Error! Enter correct operator");
+                        return;
+                }
+                System.out.print("\nThe result is given as follows:\n");
+                System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
+
+
+            }
+        }
+    }
+}
+    public static void main(String[] args){
+        int num1 = getInt();
+        int num2 = getInt();
+
+        char operation = getOperation();
+        int result = calc(num1,num2,operation);
+        System.out.println("Результат операции: "+result);
+    }
+
+    public static int getInt(){
+        System.out.println("Введите число:");
+        Scanner scanner = new Scanner(System.in);
+        int num;
+        if(scanner.hasNextLine()){
+            if (scanner.hasNextInt()) {
+                num = scanner.nextInt();
+            } else {
+                num = convert(scanner.nextLine());
+            }
+        } else {
+            System.out.println("Вы допустили ошибку при вводе числа. Попробуйте еще раз.");
+            scanner.next();
+            num = getInt();
+        }
+        return num;
+    }
+
+    public static int convert(String a)
+        if (a.equals("I")) return 1;
+        if (a.equals("II")) return 2;
+        if (a.equals("III")) return 3;
+        if (a.equals("IV")) return 4;
+        if (a.equals("V")) return 5;
+        if (a.equals("VI")) return 6;
+        if (a.equals("VII")) return 7;
+        if (a.equals("VIII")) return 8;
+        if (a.equals("IX")) return 9;
+        if (a.equals("X")) return 10;
+        return 0;
